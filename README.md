@@ -51,7 +51,7 @@ Each atom is represented by a vector encoding the occurrence of surrounding subs
 
 | Dataset             | CGR-GCNN $R^2$ | MPNN + AtomFeat (This Work) $R^2$ |
 |---------------------|----------------|-----------------------------------|
-| $E_a$ (E2/S\textsubscript{N}2)       | 0.93 ± 0.01     | **0.935 ± 0.020**                  |
+| $E_a$ (E2/SN2)       | 0.93 ± 0.01     | **0.935 ± 0.020**                  |
 | $\log(k)$ Reaction Rate | 0.90 ± 0.07     | **0.927 ± 0.007**                  |
 
 </div>
