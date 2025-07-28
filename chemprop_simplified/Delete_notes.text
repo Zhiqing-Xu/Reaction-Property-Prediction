@@ -1,0 +1,58 @@
+## From simplify_chemprop_train
+(1) def sid_metric(model_spectra: List[List[float]], target_spectra: List[List[float]], threshold: float = None, batch_size: int = 50) -> float:
+    """
+    Metric function for use with spectra data type.
+
+(2)def mcc_metric(targets: List[int], preds: Union[List[float], List[List[float]]], threshold: float = 0.5) -> float:
+    """
+    Computes the Matthews Correlation Coefficient of a binary prediction task using a given threshold for generating hard predictions.
+
+(3)def wasserstein_metric(model_spectra: List[List[float]], target_spectra: List[List[float]], threshold: float = None, batch_size: int = 50) -> float:
+    """
+    Metric function for use with spectra data type. This metric assumes that values are evenly spaced.
+(4) delete the spectral parts from Function run_training
+
+(5)delete codes  # Report scores for each folds
+
+## From simplify_chemprop_utils
+(1) def timeit(logger_name: str = None) -> Callable[[Callable], Callable]:
+    """
+    Creates a decorator which wraps a function with a timer that prints the elapsed time.
+(2)def normalize_spectra(spectra: List[List[float]], phase_features: List[List[float]] = None, phase_mask: List[List[float]] = None, batch_size: int = 50, excluded_sub_value: float = None, threshold: float = None) -> List[List[float]]:
+    """
+    Function takes in spectra and normalize them to sum values to 1. If provided with phase mask information, will remove excluded spectrum regions.
+(3)def load_phase_mask(path: str) -> List[List[int]]:
+    """
+    Loads in a matrix used to mark sections of spectra as untrainable due to interference caused by particular phases.
+(4)def validate_dataset_type(data: MoleculeDataset, dataset_type: str) -> None:
+    """
+    Validates the dataset type to ensure the data matches the provided type.
+    
+## From simplify_chemprop_data
+(1) def validate_dataset_type(data: MoleculeDataset, dataset_type: str) -> None:
+    """
+    Validates the dataset type to ensure the data matches the provided type.
+(2) def validate_data(data_path: str) -> Set[str]:
+    """
+    Validates a data CSV file, returning a set of errors.
+
+(3)def log_scaffold_stats(data: MoleculeDataset,
+                       index_sets: List[Set[int]],
+                       num_scaffolds: int = 10,
+                       num_labels: int = 20,
+                       logger: logging.Logger = None) -> List[Tuple[List[float], List[int]]]:
+    """
+    Logs and returns statistics about counts and average target values in molecular scaffolds.
+(4)def scaffold_split(data: MoleculeDataset,
+                   sizes: Tuple[float, float, float] = (0.8, 0.1, 0.1),
+                   balanced: bool = False,
+                   key_molecule_index: int = 0,
+                   seed: int = 0,
+                   logger: logging.Logger = None) -> Tuple[MoleculeDataset,
+                                                           MoleculeDataset,
+                                                           MoleculeDataset]:
+    """
+    Splits a :class:`~chemprop.data.MoleculeDataset` by scaffold so that no molecules sharing a scaffold are in different splits.
+
+(5)def get_inequality_targets(path: str, target_columns: List[str] = None) -> List[str]:
+  
