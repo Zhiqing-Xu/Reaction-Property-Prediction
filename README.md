@@ -73,8 +73,6 @@ Scatter plots show predictions versus ground truth values for $E_a$ (left) and $
 
 ## 🔍 Summary
 
-- The **molecule-level ECFP encoding** is employed in Chapter 4 for compound–protein interaction modeling.
-- The **atom-level substructure encoding** is used in Chapter 5 for reaction-conditioned sequence generation.
 
 Together, these strategies form a consistent compound representation backbone that enhances downstream prediction and generative tasks across the thesis.
 
